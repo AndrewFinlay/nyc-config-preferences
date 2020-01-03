@@ -1,4 +1,4 @@
-# Example for 'nyc instrument --exclude \*\*/glob/\*\*' bug
+# Example showing better handling of config preferences in newer version of nyc
 
 To run the example:
 ```

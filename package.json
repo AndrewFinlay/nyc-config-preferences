@@ -1,5 +1,5 @@
 {
-  "name": "nyc-instrument-exclude-example",
+  "name": "nyc-config-preferences-example",
   "version": "1.0.0",
   "description": "Demonstrate preferences in nyc config sources",
   "scripts": {
