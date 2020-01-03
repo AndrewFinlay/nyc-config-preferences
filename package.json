@@ -1,0 +1,26 @@
+{
+  "name": "nyc-instrument-exclude-example",
+  "version": "1.0.0",
+  "description": "Demonstrate preferences in nyc config sources",
+  "scripts": {
+    "clean": "rimraf instrumented-cli instrumented-nycrc instrumented-package-json .nyc_output",
+    "prefer-test-cli": "nyc instrument --exclude '**/3rd-party/**' --exclude '**/sourcemapped/**' src instrumented-cli",
+    "prefer-test-nycrc": "nyc instrument --nycrc-path './.my_nycrc' src instrumented-nycrc",
+    "prefer-test-package-json": "nyc instrument src instrumented-package-json",
+    "tap": "node ./test/nycConfigTests.js",
+    "instrument-all": "npm run clean && npm run prefer-test-cli && npm run prefer-test-nycrc && npm run prefer-test-package-json",
+    "test": "npm run instrument-all && npm run tap"
+  },
+  "nyc": {
+    "exclude": [
+        "**/dist/**"
+    ]
+  },
+  "author": "Andrew Finlay",
+  "license": "Unlicensed",
+  "devDependencies": {
+    "nyc": "^15.0.0",
+    "rimraf": "^3.0.0",
+    "tap": "^14.10.5"
+  }
+}
